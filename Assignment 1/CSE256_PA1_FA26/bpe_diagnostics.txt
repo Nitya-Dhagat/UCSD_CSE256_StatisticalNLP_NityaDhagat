@@ -1,0 +1,134 @@
+================================================================================
+BPE DIAGNOSTICS (keep_eow=False)
+================================================================================
+Unique training word types: 14830
+Initial symbols (chars + char</w> variants): 115
+Merge rules learned: 7885
+Dev word types not in train: 941
+
+First 25 merges: t+h | i+n | a+n | th+e</w> | e+r | e+n | in+g</w> | r+e | t+i | a+r | an+d</w> | o+u | o+r | o+f</w> | i+t | o+n | i+s</w> | l+y</w> | e+s</w> | s+t | a+l | e+r</w> | t+o</w> | i+l | a+t</w>
+
+--- target vocab 1000 ---
+Merges applied: 885
+Last merges applied: on+ce</w> | u+ally</w> | ne+y</w> | wor+th</w> | go+ing</w> | fas+cin
+Distinct pieces in train WITH </w> kept: 992
+Distinct pieces in train after stripping </w>: 857
+Target 1000 = base 115 + merges 885; absorbed/unused intermediate symbols account for the gap to 992 (+2 for PAD/UNK = 994)
+Embedding vocab for this run (keep_eow=False): 859
+Example splits:
+  unbelievable       -> un | beli | ev | able
+  disappointing      -> dis | ap | po | int | ing
+  masterpiece        -> ma | ster | piece
+  charming           -> char | ming
+  unfunny            -> un | funny
+  filmmaking         -> filmma | king
+  overwrought        -> over | wr | ou | ght
+  wonderfully        -> won | der | fully
+  unclassifiably     -> un | clas | si | fi | ably  (not in train)
+  igloo              -> ig | lo | o  (not in train)
+  sticky-sweet       -> s | tic | k | y- | swe | et  (not in train)
+  warmly             -> war | m | ly  (not in train)
+  intrinsically      -> int | r | insi | c | ally  (not in train)
+  apprehension       -> ap | pre | h | en | sion  (not in train)
+  enthusiast         -> en | th | u | si | ast  (not in train)
+  morning-glory      -> mor | n | ing | - | g | l | ory  (not in train)
+
+--- target vocab 2000 ---
+Merges applied: 1885
+Last merges applied: th+ful</w> | der+i | gu+il | wil+d</w> | s+and | jo+b</w>
+Distinct pieces in train WITH </w> kept: 1977
+Distinct pieces in train after stripping </w>: 1758
+Target 2000 = base 115 + merges 1885; absorbed/unused intermediate symbols account for the gap to 1977 (+2 for PAD/UNK = 1979)
+Embedding vocab for this run (keep_eow=False): 1760
+Example splits:
+  unbelievable       -> un | believ | able
+  disappointing      -> disappoint | ing
+  masterpiece        -> master | piece
+  charming           -> charming
+  unfunny            -> un | funny
+  filmmaking         -> filmmaking
+  overwrought        -> over | wr | ought
+  wonderfully        -> wonder | fully
+  unclassifiably     -> un | clas | si | fi | ably  (not in train)
+  igloo              -> ig | lo | o  (not in train)
+  sticky-sweet       -> stic | k | y- | sweet  (not in train)
+  warmly             -> war | m | ly  (not in train)
+  intrinsically      -> int | r | insi | c | ally  (not in train)
+  apprehension       -> ap | pre | h | en | sion  (not in train)
+  enthusiast         -> en | th | u | si | ast  (not in train)
+  morning-glory      -> mor | n | ing- | gl | ory  (not in train)
+
+--- target vocab 3000 ---
+Merges applied: 2885
+Last merges applied: su+m</w> | de+st | mo+tion</w> | an+no | n+am | y+am
+Distinct pieces in train WITH </w> kept: 2953
+Distinct pieces in train after stripping </w>: 2661
+Target 3000 = base 115 + merges 2885; absorbed/unused intermediate symbols account for the gap to 2953 (+2 for PAD/UNK = 2955)
+Embedding vocab for this run (keep_eow=False): 2663
+Example splits:
+  unbelievable       -> un | believable
+  disappointing      -> disappoint | ing
+  masterpiece        -> masterpiece
+  charming           -> charming
+  unfunny            -> unfunny
+  filmmaking         -> filmmaking
+  overwrought        -> over | wr | ought
+  wonderfully        -> wonder | fully
+  unclassifiably     -> un | clas | si | fi | ably  (not in train)
+  igloo              -> ig | lo | o  (not in train)
+  sticky-sweet       -> stic | k | y- | sweet  (not in train)
+  warmly             -> warm | ly  (not in train)
+  intrinsically      -> int | r | insi | c | ally  (not in train)
+  apprehension       -> ap | pre | hen | sion  (not in train)
+  enthusiast         -> enthusi | ast  (not in train)
+  morning-glory      -> mor | n | ing- | gl | ory  (not in train)
+
+--- target vocab 5000 ---
+Merges applied: 4885
+Last merges applied: de+gree</w> | enig+ma</w> | slic+k</w> | hop+kins</w> | swee+tly</w> | pas+sionate</w>
+Distinct pieces in train WITH </w> kept: 4855
+Distinct pieces in train after stripping </w>: 4424
+Target 5000 = base 115 + merges 4885; absorbed/unused intermediate symbols account for the gap to 4855 (+2 for PAD/UNK = 4857)
+Embedding vocab for this run (keep_eow=False): 4426
+Example splits:
+  unbelievable       -> un | believable
+  disappointing      -> disappointing
+  masterpiece        -> masterpiece
+  charming           -> charming
+  unfunny            -> unfunny
+  filmmaking         -> filmmaking
+  overwrought        -> overwrought
+  wonderfully        -> wonderfully
+  unclassifiably     -> un | classi | fi | ably  (not in train)
+  igloo              -> ig | lo | o  (not in train)
+  sticky-sweet       -> stic | k | y- | sweet  (not in train)
+  warmly             -> warm | ly  (not in train)
+  intrinsically      -> int | r | insi | c | ally  (not in train)
+  apprehension       -> ap | pre | hen | sion  (not in train)
+  enthusiast         -> enthusi | ast  (not in train)
+  morning-glory      -> mor | n | ing- | glory  (not in train)
+
+--- target vocab 8000 ---
+Merges applied: 7885
+Last merges applied: on+ous</w> | com+man | e+able</w> | d+able</w> | un+able</w> | k+ne
+Distinct pieces in train WITH </w> kept: 7447
+Distinct pieces in train after stripping </w>: 6837
+Target 8000 = base 115 + merges 7885; absorbed/unused intermediate symbols account for the gap to 7447 (+2 for PAD/UNK = 7449)
+Embedding vocab for this run (keep_eow=False): 6839
+Example splits:
+  unbelievable       -> unbelievable
+  disappointing      -> disappointing
+  masterpiece        -> masterpiece
+  charming           -> charming
+  unfunny            -> unfunny
+  filmmaking         -> filmmaking
+  overwrought        -> overwrought
+  wonderfully        -> wonderfully
+  unclassifiably     -> un | classi | fi | ably  (not in train)
+  igloo              -> ig | lo | o  (not in train)
+  sticky-sweet       -> stic | k | y- | sweet  (not in train)
+  warmly             -> warm | ly  (not in train)
+  intrinsically      -> int | r | insi | c | ally  (not in train)
+  apprehension       -> ap | pre | hen | sion  (not in train)
+  enthusiast         -> enthusi | ast  (not in train)
+  morning-glory      -> mor | n | ing- | glory  (not in train)

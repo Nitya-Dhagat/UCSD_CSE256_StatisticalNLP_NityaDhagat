@@ -42,12 +42,18 @@ class BPETokenizer:
 
     vocab_size is the target size of the BPE symbol inventory. PAD and UNK
     are added separately by the downstream sentiment vocabulary.
+
+    keep_eow=False (default): the </w> marker is stripped from the final piece,
+        so "ing</w>" and a mid-word "ing" share one embedding.
+    keep_eow=True: the marker is kept, so word-final pieces get their own ids.
     """
 
-    def __init__(self):
+    def __init__(self, keep_eow=False):
         self.merges = []
         self.base_vocab_size = 0
         self.fitted = False
+        self.keep_eow = keep_eow
+        self.num_training_words = 0
         self._token_cache = {}
 
     def fit(self, train_file, vocab_size=5000):
@@ -58,6 +64,7 @@ class BPETokenizer:
         if not word_counts:
             raise ValueError("No words were found in the BPE training file.")
 
+        self.num_training_words = len(word_counts)
         word_symbols = {
             word: _initial_symbols(word) for word in word_counts
         }
@@ -148,15 +155,18 @@ class BPETokenizer:
         )
         return self
 
-    def tokenize_word(self, word, vocab_size=5000):
+    def merges_applied(self, vocab_size):
+        """Number of merge rules used for a given target vocabulary size."""
+        return min(len(self.merges), max(0, vocab_size - self.base_vocab_size))
+
+    def tokenize_word(self, word, vocab_size=5000, keep_eow=None):
         if not self.fitted:
             raise RuntimeError("Call fit() before tokenizing.")
+        if keep_eow is None:
+            keep_eow = self.keep_eow
 
-        number_of_merges = min(
-            len(self.merges),
-            max(0, vocab_size - self.base_vocab_size)
-        )
-        cache_key = (word, number_of_merges)
+        number_of_merges = self.merges_applied(vocab_size)
+        cache_key = (word, number_of_merges, keep_eow)
         if cache_key in self._token_cache:
             return list(self._token_cache[cache_key])
 
@@ -164,10 +174,9 @@ class BPETokenizer:
         for pair in self.merges[:number_of_merges]:
             symbols = _merge_pair(symbols, pair)
 
-        # Remove the end-of-word marker from the final piece.
         pieces = []
         for symbol in symbols:
-            if symbol.endswith(END_OF_WORD):
+            if symbol.endswith(END_OF_WORD) and not keep_eow:
                 symbol = symbol[:-len(END_OF_WORD)]
             if symbol:
                 pieces.append(symbol)
@@ -175,10 +184,10 @@ class BPETokenizer:
         self._token_cache[cache_key] = tuple(pieces)
         return pieces
 
-    def tokenize_sentence(self, words, vocab_size=5000):
+    def tokenize_sentence(self, words, vocab_size=5000, keep_eow=None):
         pieces = []
         for word in words:
-            pieces.extend(self.tokenize_word(word, vocab_size))
+            pieces.extend(self.tokenize_word(word, vocab_size, keep_eow))
         return pieces
 
 
@@ -206,11 +215,18 @@ class BPESentimentDataset(Dataset):
             self.token_to_id = token_to_id
 
         self.encoded = []
+        unk_count = 0
+        token_count = 0
         for pieces in self.tokenized:
             ids = [self.token_to_id.get(piece, 1) for piece in pieces]
+            unk_count += sum(1 for i in ids if i == 1)
+            token_count += len(ids)
             if not ids:
                 ids = [1]
             self.encoded.append(ids)
+
+        # Fraction of subword tokens that map to UNK (nonzero only for dev/test).
+        self.unk_rate = unk_count / max(token_count, 1)
 
     def __len__(self):
         return len(self.examples)

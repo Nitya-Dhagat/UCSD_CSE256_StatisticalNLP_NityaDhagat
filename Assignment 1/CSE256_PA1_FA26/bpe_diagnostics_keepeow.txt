@@ -1,0 +1,134 @@
+================================================================================
+BPE DIAGNOSTICS (keep_eow=True)
+================================================================================
+Unique training word types: 14830
+Initial symbols (chars + char</w> variants): 115
+Merge rules learned: 7885
+Dev word types not in train: 941
+
+First 25 merges: t+h | i+n | a+n | th+e</w> | e+r | e+n | in+g</w> | r+e | t+i | a+r | an+d</w> | o+u | o+r | o+f</w> | i+t | o+n | i+s</w> | l+y</w> | e+s</w> | s+t | a+l | e+r</w> | t+o</w> | i+l | a+t</w>
+
+--- target vocab 1000 ---
+Merges applied: 885
+Last merges applied: on+ce</w> | u+ally</w> | ne+y</w> | wor+th</w> | go+ing</w> | fas+cin
+Distinct pieces in train WITH </w> kept: 992
+Distinct pieces in train after stripping </w>: 856
+Target 1000 = base 115 + merges 885; absorbed/unused intermediate symbols account for the gap to 992 (+2 for PAD/UNK = 994)
+Embedding vocab for this run (keep_eow=True): 994
+Example splits:
+  unbelievable       -> un | beli | ev | able</w>
+  disappointing      -> dis | ap | po | int | ing</w>
+  masterpiece        -> ma | ster | piece</w>
+  charming           -> char | ming</w>
+  unfunny            -> un | funny</w>
+  filmmaking         -> filmma | king</w>
+  overwrought        -> over | wr | ou | ght</w>
+  wonderfully        -> won | der | fully</w>
+  unclassifiably     -> un | clas | si | fi | ably</w>  (not in train)
+  igloo              -> ig | lo | o</w>  (not in train)
+  sticky-sweet       -> s | tic | k | y- | swe | et</w>  (not in train)
+  warmly             -> war | m | ly</w>  (not in train)
+  intrinsically      -> int | r | insi | c | ally</w>  (not in train)
+  apprehension       -> ap | pre | h | en | sion</w>  (not in train)
+  enthusiast         -> en | th | u | si | ast</w>  (not in train)
+  morning-glory      -> mor | n | ing | - | g | l | ory</w>  (not in train)
+
+--- target vocab 2000 ---
+Merges applied: 1885
+Last merges applied: gu+il | wil+d</w> | s+and | jo+b</w> | i+ght | ght+ly</w>
+Distinct pieces in train WITH </w> kept: 1977
+Distinct pieces in train after stripping </w>: 1757
+Target 2000 = base 115 + merges 1885; absorbed/unused intermediate symbols account for the gap to 1977 (+2 for PAD/UNK = 1979)
+Embedding vocab for this run (keep_eow=True): 1979
+Example splits:
+  unbelievable       -> un | believ | able</w>
+  disappointing      -> disappoint | ing</w>
+  masterpiece        -> master | piece</w>
+  charming           -> charming</w>
+  unfunny            -> un | funny</w>
+  filmmaking         -> filmmaking</w>
+  overwrought        -> over | wr | ought</w>
+  wonderfully        -> wonder | fully</w>
+  unclassifiably     -> un | clas | si | fi | ably</w>  (not in train)
+  igloo              -> ig | lo | o</w>  (not in train)
+  sticky-sweet       -> stic | k | y- | sweet</w>  (not in train)
+  warmly             -> war | m | ly</w>  (not in train)
+  intrinsically      -> int | r | insi | c | ally</w>  (not in train)
+  apprehension       -> ap | pre | h | en | sion</w>  (not in train)
+  enthusiast         -> en | th | u | si | ast</w>  (not in train)
+  morning-glory      -> mor | n | ing- | gl | ory</w>  (not in train)
+
+--- target vocab 3000 ---
+Merges applied: 2885
+Last merges applied: su+m</w> | de+st | mo+tion</w> | an+no | n+am | st+am
+Distinct pieces in train WITH </w> kept: 2953
+Distinct pieces in train after stripping </w>: 2659
+Target 3000 = base 115 + merges 2885; absorbed/unused intermediate symbols account for the gap to 2953 (+2 for PAD/UNK = 2955)
+Embedding vocab for this run (keep_eow=True): 2955
+Example splits:
+  unbelievable       -> un | believable</w>
+  disappointing      -> disappoint | ing</w>
+  masterpiece        -> masterpiece</w>
+  charming           -> charming</w>
+  unfunny            -> unfunny</w>
+  filmmaking         -> filmmaking</w>
+  overwrought        -> over | wr | ought</w>
+  wonderfully        -> wonder | fully</w>
+  unclassifiably     -> un | clas | si | fi | ably</w>  (not in train)
+  igloo              -> ig | lo | o</w>  (not in train)
+  sticky-sweet       -> stic | k | y- | sweet</w>  (not in train)
+  warmly             -> warm | ly</w>  (not in train)
+  intrinsically      -> int | r | insi | c | ally</w>  (not in train)
+  apprehension       -> ap | pre | hen | sion</w>  (not in train)
+  enthusiast         -> enthusi | ast</w>  (not in train)
+  morning-glory      -> mor | n | ing- | gl | ory</w>  (not in train)
+
+--- target vocab 5000 ---
+Merges applied: 4885
+Last merges applied: slic+k</w> | hop+kins</w> | swee+tly</w> | pas+sionate</w> | appropri+ate</w> | endeav+or</w>
+Distinct pieces in train WITH </w> kept: 4859
+Distinct pieces in train after stripping </w>: 4432
+Target 5000 = base 115 + merges 4885; absorbed/unused intermediate symbols account for the gap to 4859 (+2 for PAD/UNK = 4861)
+Embedding vocab for this run (keep_eow=True): 4861
+Example splits:
+  unbelievable       -> un | believable</w>
+  disappointing      -> disappointing</w>
+  masterpiece        -> masterpiece</w>
+  charming           -> charming</w>
+  unfunny            -> unfunny</w>
+  filmmaking         -> filmmaking</w>
+  overwrought        -> overwrought</w>
+  wonderfully        -> wonderfully</w>
+  unclassifiably     -> un | classi | fi | ably</w>  (not in train)
+  igloo              -> ig | lo | o</w>  (not in train)
+  sticky-sweet       -> stic | k | y- | sweet</w>  (not in train)
+  warmly             -> warm | ly</w>  (not in train)
+  intrinsically      -> int | r | insi | c | ally</w>  (not in train)
+  apprehension       -> ap | pre | hen | sion</w>  (not in train)
+  enthusiast         -> enthusi | ast</w>  (not in train)
+  morning-glory      -> mor | n | ing- | glory</w>  (not in train)
+
+--- target vocab 8000 ---
+Merges applied: 7885
+Last merges applied: c+ely</w> | char+lo | th+ru | fe+e | de+fe | fe+ti
+Distinct pieces in train WITH </w> kept: 7453
+Distinct pieces in train after stripping </w>: 6846
+Target 8000 = base 115 + merges 7885; absorbed/unused intermediate symbols account for the gap to 7453 (+2 for PAD/UNK = 7455)
+Embedding vocab for this run (keep_eow=True): 7455
+Example splits:
+  unbelievable       -> unbelievable</w>
+  disappointing      -> disappointing</w>
+  masterpiece        -> masterpiece</w>
+  charming           -> charming</w>
+  unfunny            -> unfunny</w>
+  filmmaking         -> filmmaking</w>
+  overwrought        -> overwrought</w>
+  wonderfully        -> wonderfully</w>
+  unclassifiably     -> un | classi | fi | ably</w>  (not in train)
+  igloo              -> ig | lo | o</w>  (not in train)
+  sticky-sweet       -> stic | k | y- | sweet</w>  (not in train)
+  warmly             -> warm | ly</w>  (not in train)
+  intrinsically      -> int | r | insi | c | ally</w>  (not in train)
+  apprehension       -> ap | pre | hen | sion</w>  (not in train)
+  enthusiast         -> enthusi | ast</w>  (not in train)
+  morning-glory      -> mor | n | ing- | glory</w>  (not in train)
